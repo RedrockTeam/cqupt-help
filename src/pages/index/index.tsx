@@ -20,7 +20,7 @@ interface Selected {
   num: number,
 }
 
-const Index: React.FC = () => {
+const Index: Taro.FC = () => {
   const counter = useSelector<RootState, Selected>(state => state.counter)
   const dispatch = useDispatch()
   return (

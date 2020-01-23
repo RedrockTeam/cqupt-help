@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins.scss';
+
+.navbar {
+  width: 27px;
+  height: 32px;
+  margin-left: 12px;
+  background-size: 27px 32px;
+  @include bg-image('../../assets/images/self-center');
+}
