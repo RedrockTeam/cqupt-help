@@ -26,6 +26,12 @@ class App extends Component {
     pages: [
       'pages/home/home',
       'pages/self/self',
+      'pages/compus/compus',
+      'pages/tickets/tickets',
+      'pages/volunteer/volunteer',
+      'pages/myActivities/myActivities',
+      'pages/myRewards/myRewards',
+
       'pages/index/index',
     ],
     window: {

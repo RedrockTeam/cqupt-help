@@ -7,3 +7,110 @@
   background-size: 27px 32px;
   @include bg-image('../../assets/images/self-center');
 }
+
+.date {
+  margin-left: 30px;
+  @include bg-image('../../assets/images/icon-date');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 28px 29px;
+  padding-left: 50px;
+  color: #302F32;
+  font-size: 29px;
+  line-height: 32px;
+  height: 32px;
+  margin-top: 20px;
+}
+
+@mixin serve {
+  width: 140px;
+  height: 180px;
+  background-size: 140px 180px;
+}
+
+.banner_top {
+  display: flex;
+  height: 300px;
+  justify-content: space-evenly;
+  align-items: center;
+  &__compus {
+    @include serve;
+    @include bg-image('../../assets/images/serve-compus')
+  }
+  &__tickets {
+    @include serve;
+    @include bg-image('../../assets/images/serve-tickets')
+  }
+  &__volunteer {
+    @include serve;
+    @include bg-image('../../assets/images/serve-volunteer')
+  }
+}
+
+@mixin banner_bottom_item {
+  width:335px;
+  height:152px;
+  background-size: 102px 92px;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color:rgba(245,246,250,1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin banner_bottom_item_title {
+  font-size:30px;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+
+@mixin banner_bottom_item_text {
+  font-size:24px;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+@mixin banner_bottom_item_done {
+  margin-left: 10px;
+  font-size:28px;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+.banner_bottom {
+  display: flex;
+  padding: 0 30px 39px;
+  justify-content: space-between;
+  border-bottom: 10px solid #F5F6FA;
+  .my_activities {
+    @include banner_bottom_item;
+    @include bg-image('../../assets/images/icon-my-activities');
+    &__title {
+      @include banner_bottom_item_title;
+    }
+    &__text {
+      @include banner_bottom_item_text;
+    }
+    &__done {
+      @include banner_bottom_item_done;
+    }
+  }
+  .my_rewards {
+    @include banner_bottom_item;
+    @include bg-image('../../assets/images/icon-my-rewards');
+    &__title {
+      @include banner_bottom_item_title;
+    }
+    &__text {
+      @include banner_bottom_item_text;
+    }
+    &__done {
+      @include banner_bottom_item_done;
+    }
+  }
+}

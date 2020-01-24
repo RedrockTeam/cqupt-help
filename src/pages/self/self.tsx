@@ -1,30 +1,19 @@
-import Taro, { navigateBack } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import NavBar from 'taro-navigationbar'
-import styles from './self.module.scss'
-
-const navigateToBack = () => navigateBack()
+// import styles from './self.module.scss'
+import NavToBack from '../../components/navToBack/navToBack'
 
 const Self: Taro.FC = () => {
   return (
-    <View className='main-wraper'>
-      <NavBar
-        title='我的页面'
-        background='#fff'
-        renderLeft={
-          <View
-            className={styles.navbar}
-            onClick={navigateToBack}
-          />
-        }
-      />
+    <View>
+      <NavToBack title='我的页面' />
       <View>SELF</View>
     </View>
   )
 }
 
 Self.config = {
-  navigationBarTitleText: '',
+  navigationBarTitleText: '我的页面',
   navigationStyle: 'custom',
 }
 
