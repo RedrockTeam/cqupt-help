@@ -25,12 +25,14 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/home/home',
-      'pages/self/self',
-      'pages/compus/compus',
-      'pages/tickets/tickets',
-      'pages/volunteer/volunteer',
-      'pages/myActivities/myActivities',
-      'pages/myRewards/myRewards',
+        'pages/self/self',
+          'pages/idCards/idCards',
+          'pages/feedback/feedback',
+        'pages/compus/compus',
+        'pages/tickets/tickets',
+        'pages/volunteer/volunteer',
+        'pages/myActivities/myActivities',
+        'pages/myRewards/myRewards',
 
       'pages/index/index',
     ],
