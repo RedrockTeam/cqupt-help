@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose, combineReducers, Action } from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunkMiddleware, { ThunkAction } from 'redux-thunk'
 import counter, { CounterState } from './modules/counter'
 

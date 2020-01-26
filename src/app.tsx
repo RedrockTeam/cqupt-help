@@ -2,6 +2,7 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
 import Home from './pages/home/home'
+// import Home from './pages/idCards/idCards'
 
 import store from './redux'
 
