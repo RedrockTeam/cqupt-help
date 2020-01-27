@@ -1,0 +1,52 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  width: 656px;
+  margin-left: 34px;
+  margin-top: 30px;
+}
+
+.header {
+  @include font(24px, #999999, 400);
+  line-height: 18px;
+}
+
+.wrapper {
+  margin-top: 16px;
+  padding: 28px;
+  background-color: #fff;
+}
+
+.title {
+  @include font(30px, #333, bold);
+  line-height: 29px;
+  display: flex;
+  width: 596px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.state {
+  @include font(24px, #bbb, 500);
+  height: 23px;
+  line-height: 23px;
+  &_active {
+    @include font(24px, #FF3B3B, 500);
+    height: 23px;
+    line-height: 23px;
+  }
+}
+
+.organization {
+  @include font(24px, #666, 400);
+  margin-bottom: 19px;
+  height: 23px;
+  line-height: 23px;
+}
+
+.time {
+  @include font(24px, #666, 400);
+  height: 23px;
+  line-height: 23px;
+}

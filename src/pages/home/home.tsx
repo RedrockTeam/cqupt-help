@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import NavBar from 'taro-navigationbar'
 import styles from './home.module.scss'
-import RecentActivity from '../../components/activity/activity'
+import RecentActivity from '../../components/recentActivity/recentActivity'
 
 const navigateToSelf = () => Taro.navigateTo({
   url: '/pages/self/self'
@@ -91,7 +91,7 @@ const Home: Taro.FC = () => {
             title={e.title}
             organization={e.organization}
             date={e.date}
-          ></RecentActivity>
+          />
         ))}
       </View>
     </View>

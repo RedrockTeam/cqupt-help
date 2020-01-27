@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import styles from './activity.module.scss'
+import styles from './recentActivity.module.scss'
 
 interface Prop {
   title: string,
