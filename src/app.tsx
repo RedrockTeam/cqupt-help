@@ -29,6 +29,7 @@ class App extends Component {
         'pages/self/self',
           'pages/idCards/idCards',
           'pages/feedback/feedback',
+            'pages/feedbackSucceed/feedbackSucceed',
         'pages/compus/compus',
         'pages/tickets/tickets',
         'pages/volunteer/volunteer',

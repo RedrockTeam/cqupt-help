@@ -4,3 +4,14 @@
     background-image: url($url + "@3x.png");
   }
 }
+
+@mixin littleBlueButton {
+  width:300px;
+  line-height:80px;
+  background:rgba(64,89,255,1);
+  color: #fff;
+  font-size:36px;
+  font-family:PingFang SC;
+  font-weight:bold;
+  border-radius: 0;
+}

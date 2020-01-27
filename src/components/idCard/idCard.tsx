@@ -31,7 +31,7 @@ class IdCard extends Taro.Component<Prop, { isHidden: boolean }> {
 
       // 处理画布
       // this.setState({ isHidden: false })
-      Taro.showLoading({ title: '正在下载中...', mask: true })
+      Taro.showLoading({ title: '正在处理中...', mask: true })
 
       const avatarInfo = await Taro.getImageInfo({ src: this.props.avatar })
       const ctx = Taro.createCanvasContext(`${this.props.organization}-canvas`, this)
