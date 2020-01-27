@@ -5,18 +5,17 @@
   height: 32px;
   margin-left: 12px;
   background-size: 27px 32px;
-  @include bg-image('../../assets/images/self-center');
+  background-image: url('../../assets/images/self-center.png');
 }
 
 .date {
   margin-left: 30px;
-  @include bg-image('../../assets/images/icon-date');
+  background-image: url('../../assets/images/icon-date.png');
   background-repeat: no-repeat;
   background-position: left top;
   background-size: 28px 29px;
   padding-left: 50px;
-  color: #302F32;
-  font-size: 29px;
+  @include font(29px, #302F32, normal);
   line-height: 32px;
   height: 32px;
   margin-top: 20px;
@@ -35,15 +34,15 @@
   align-items: center;
   &__compus {
     @include serve;
-    @include bg-image('../../assets/images/serve-compus')
+    background-image: url('../../assets/images/serve-compus.png');
   }
   &__tickets {
     @include serve;
-    @include bg-image('../../assets/images/serve-tickets')
+    background-image: url('../../assets/images/serve-tickets.png');
   }
   &__volunteer {
     @include serve;
-    @include bg-image('../../assets/images/serve-volunteer')
+    background-image: url('../../assets/images/serve-volunteer.png');
   }
 }
 
@@ -60,28 +59,6 @@
   justify-content: space-between;
 }
 
-@mixin banner_bottom_item_title {
-  font-size:30px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(51,51,51,1);
-}
-
-@mixin banner_bottom_item_text {
-  font-size:24px;
-  font-family:PingFang SC;
-  font-weight:400;
-  color:rgba(153,153,153,1);
-}
-
-@mixin banner_bottom_item_done {
-  margin-left: 10px;
-  font-size:28px;
-  font-family:PingFang SC;
-  font-weight:500;
-  color:rgba(51,51,51,1);
-}
-
 .banner_bottom {
   display: flex;
   padding: 0 30px 39px;
@@ -89,28 +66,30 @@
   border-bottom: 10px solid #F5F6FA;
   .my_activities {
     @include banner_bottom_item;
-    @include bg-image('../../assets/images/icon-my-activities');
+    background-image: url('../../assets/images/icon-my-activities.png');
     &__title {
-      @include banner_bottom_item_title;
+      @include font(30px, rgba(51,51,51,1), bold);
     }
     &__text {
-      @include banner_bottom_item_text;
+      @include font(24px, rgba(153,153,513,1), 400);
     }
     &__done {
-      @include banner_bottom_item_done;
+      margin-left: 10px;
+      @include font(28px, rgba(51,51,51,1), 500);
     }
   }
   .my_rewards {
     @include banner_bottom_item;
-    @include bg-image('../../assets/images/icon-my-rewards');
+    background-image: url('../../assets/images/icon-my-rewards.png');
     &__title {
-      @include banner_bottom_item_title;
+      @include font(30px, rgba(51,51,51,1), bold);
     }
     &__text {
-      @include banner_bottom_item_text;
+      @include font(24px, rgba(153,153,513,1), 400);
     }
     &__done {
-      @include banner_bottom_item_done;
+      margin-left: 10px;
+      @include font(28px, rgba(51,51,51,1), 500);
     }
   }
 }

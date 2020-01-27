@@ -1,3 +1,5 @@
+@import '../../assets/styles/mixins.scss';
+
 .container {
   height: 100px;
   margin: 0 30px;
@@ -9,10 +11,7 @@
 
 .left {
   padding-left: 45px;
-  font-size:32px;
-  font-family:PingFang SC;
-  font-weight:500;
-  color:rgba(68,68,68,1);
+  @include font(32px, rgba(68, 68, 68, 1), 400);
   background-repeat: no-repeat;
   background-size: 33px 22px;
   background-position: left center;
@@ -21,7 +20,7 @@
 .arrow {
   width:17px;
   height:29px;
-  background-image: url('../../assets/images/back@2x.png');
+  background-image: url('../../assets/images/back.png');
   background-size: 17px 29px;
   transform: rotate(180deg);
 }

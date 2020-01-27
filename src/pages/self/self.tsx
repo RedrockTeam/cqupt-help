@@ -4,8 +4,8 @@ import styles from './self.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import SelfRoute from '../../components/selfRoute/selfRoute'
 import defaultAvatar from '../../assets/images/avatar.png'
-import idCardsImg from '../../assets/images/icon-idCards@2x.png'
-import feedbackImg from '../../assets/images/icon-feedback@2x.png'
+import idCardsImg from '../../assets/images/icon-idCards.png'
+import feedbackImg from '../../assets/images/icon-feedback.png'
 
 const entries = [
   {

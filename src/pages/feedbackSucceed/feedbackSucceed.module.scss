@@ -16,30 +16,21 @@
 .title {
   margin-top: 22px;
   line-height:28px;
-  font-size:30px;
-  font-family:PingFang SC;
-  font-weight:500;
-  color:rgba(51,51,51,1);
+  @include font(30px, rgba(51,51,51,1), 500);
 }
 
 .info {
   margin-top: 29px;
   margin-bottom: 59px;
   line-height:23px;
-  font-size:24px;
-  font-family:PingFang SC;
-  font-weight:400;
-  color:rgba(153,153,153,1);
+  @include font(24px, rgba(153,153,153,1), 400);
   display: flex;
 }
 
 .copy {
   height:23px;
-  font-size:24px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(64,89,255,1);
   margin-left: 15px;
+  @include font(24px, rgba(64,89,255,1), bold);
 }
 
 .confirm {

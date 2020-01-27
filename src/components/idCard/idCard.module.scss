@@ -1,3 +1,5 @@
+@import '../../assets/styles/mixins.scss';
+
 .container {
   width: 690px;
   height: 390px;
@@ -31,17 +33,11 @@
 }
 
 .name {
-  font-size:42px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(71,79,102,1);
+  @include font(42px, rgba(71,79,102,1), bold);
 }
 
 .major {
-  font-size:28px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(122,130,153,1);
+  @include font(28px, rgba(122,130,153,1), bold);
 }
 
 .bottom {
@@ -53,18 +49,12 @@
 
 .organization {
   line-height:33px;
-  font-size:34px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(71,79,102,1);
+  @include font(34px, rgba(71,79,102,1), bold);
 }
 
 .date {
   line-height:25px;
-  font-size:26px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  color:rgba(122,130,153,1);
+  @include font(26px, rgba(122,130,153,1), bold);
 }
 
 .download {

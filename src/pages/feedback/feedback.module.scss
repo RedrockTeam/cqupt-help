@@ -13,11 +13,8 @@ page {
 }
 
 @mixin title {
-  font-size:28px;
   line-height: 26px;
-  font-family:PingFang SC;
-  font-weight:500;
-  color:rgba(153,153,153,1);
+  @include font(28px, rgba(153,153,153,1), 500);
 }
 
 .title {
@@ -44,10 +41,8 @@ page {
   width: 690px;
   height: 346px;
   background: #fff;
-  font-size:32px;
-  font-family:PingFang SC;
   padding: 30px;
-  color:rgba(0,0,0,1);
+  @include font(32px, #000, normal);
   margin: 16px 0 75px;
 }
 

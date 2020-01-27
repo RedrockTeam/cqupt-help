@@ -5,5 +5,5 @@
   height:31px;
   margin-left: 12px;
   background-size: 17px 31px;
-  @include bg-image('../../assets/images/back');
+  background-image: url('../../assets/images/back.png');
 }

@@ -1,10 +1,3 @@
-@mixin bg-image($url) {
-  background-image: url($url + "@2x.png");
-  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
-    background-image: url($url + "@3x.png");
-  }
-}
-
 @mixin littleBlueButton {
   width:300px;
   line-height:80px;
@@ -14,4 +7,11 @@
   font-family:PingFang SC;
   font-weight:bold;
   border-radius: 0;
+}
+
+@mixin font($size, $color, $weight) {
+  font-size: $size;
+  font-family: PingFang SC;
+  font-weight: $weight;
+  color: $color;
 }
