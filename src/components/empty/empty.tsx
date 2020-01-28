@@ -7,7 +7,7 @@ interface Prop {
   content: string,
 }
 
-const Activity: Taro.FC<Prop> = ({ content }) => {
+const Empty: Taro.FC<Prop> = ({ content }) => {
   return (
     <View className={styles.container}>
       <Image src={icon} className={styles.image} />
@@ -16,4 +16,4 @@ const Activity: Taro.FC<Prop> = ({ content }) => {
   )
 }
 
-export default Activity
+export default Empty
