@@ -1,19 +1,16 @@
-@mixin littleBlueButton {
-  width:300px;
-  line-height:80px;
-  background:rgba(64,89,255,1);
-  color: #fff;
-  font-size:36px;
-  font-family:PingFang SC;
-  font-weight:bold;
-  border-radius: 0;
-}
-
 @mixin font($size, $color, $weight) {
   font-size: $size;
   font-family: PingFang SC;
   font-weight: $weight;
   color: $color;
+}
+
+@mixin littleBlueButton {
+  width:300px;
+  line-height:80px;
+  background:rgba(64,89,255,1);
+  @include font(36px, #fff, bold);
+  border-radius: 0;
 }
 
 @mixin full_screen {

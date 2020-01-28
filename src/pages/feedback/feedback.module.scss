@@ -1,14 +1,11 @@
 @import '../../assets/styles/mixins.scss';
 
-page {
-  overflow: hidden;
-}
+@include full_screen;
 
 .container {
   display: flex;
   flex-direction: column;
   width:750px;
-  height: 2000px; // 背景颜色设置
   background-color: #F6F5FA;
 }
 
@@ -48,4 +45,21 @@ page {
 
 .submit {
   @include littleBlueButton
+}
+
+.dialog {
+  &_wrapper {
+    width: 520px;
+    height: 317px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include font(24px, #666, 500);
+  }
+  &_image {
+    width: 125px;
+    height: 125px;
+    margin-bottom: 29px;
+  }
 }

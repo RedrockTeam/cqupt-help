@@ -6,54 +6,54 @@ import MyActivity from '../../components/myActivity/myActivity'
 import Empty from '../../components/empty/empty'
 
 const mock = [
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
-  // {
-  //   title: '银杏拍摄大赛',
-  //   organization: '红岩网校',
-  //   joinDate: '2019.10.29',
-  //   time: '2019.11.01 - 2020.02.02',
-  // },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
+  {
+    title: '银杏拍摄大赛',
+    organization: '红岩网校',
+    joinDate: '2019.10.29',
+    time: '2019.11.01 - 2020.02.02',
+  },
 ]
 
 const MyActivities: Taro.FC = () => {

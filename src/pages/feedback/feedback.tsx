@@ -1,40 +1,58 @@
 import Taro, { useState } from '@tarojs/taro'
-import { View, Button, Input, Textarea, Text } from '@tarojs/components'
+import { View, Button, Input, Textarea, Text, Image } from '@tarojs/components'
 import styles from './feedback.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
+import Dialog from '../../components/dialog/dialog'
+import iconWithoutTitle from '../../assets/images/icon-without-title.png'
+import iconWithoutReason from '../../assets/images/icon-without-reason.png'
+
+type DialogState = { isShow: boolean, which: 'title' | 'reason' | null }
 
 const Feedback: Taro.FC = () => {
   const [title, setTitle] = useState<string>('')
   const [reason, setReason] = useState<string>('')
+  const [dialog, setDialog] = useState<DialogState>({ isShow: false, which: null })
 
-  const onClick = async () => {
+  // eslint-disable-next-line react/no-multi-comp
+  const renderDialog = (): JSX.Element => {
+    if (!dialog.isShow && dialog.which === null) return <Dialog isShow={false} />
+    if (dialog.which === 'title') {
+      return (
+        <Dialog isShow onClick={() => setDialog({ isShow: false, which: null })} >
+          <View className={styles.dialog_wrapper}>
+            <Image src={iconWithoutTitle} className={styles.dialog_image} />
+            <View>你还未输入标题</View>
+          </View>
+        </Dialog>
+      )
+    }
+    return (
+      <Dialog isShow onClick={() => setDialog({ isShow: false, which: null })} >
+        <View className={styles.dialog_wrapper}>
+          <Image src={iconWithoutReason} className={styles.dialog_image} />
+          <View>你还未输入内容</View>
+        </View>
+      </Dialog>
+    )
+  }
+
+  const onClick = () => {
     if (title.length === 0) {
-      await Taro.showToast({
-        title: '你还未输入标题',
-        duration: 2000,
-        icon: 'none',
-        mask: true,
-      })
+      setDialog({ isShow: true, which: 'title' })
       return
     }
-
     if (reason.length === 0) {
-      await Taro.showToast({
-        title: '你还未内容',
-        duration: 2000,
-        icon: 'none',
-        mask: true,
-      })
+      setDialog({ isShow: true, which: 'reason' })
       return
     }
-
     console.log(title, reason)
     Taro.navigateTo({ url: '/pages/feedbackSucceed/feedbackSucceed' })
   }
 
   return (
-    <View>
+    <View className={styles.full_screen}>
       <NavToBack title='反馈中心' backgroundColor='#F6F5FA' />
+      {renderDialog()}
       <View className={styles.container}>
         <View className={styles.title}>故障标题</View>
         <Input
