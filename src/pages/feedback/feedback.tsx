@@ -14,11 +14,11 @@ const Feedback: Taro.FC = () => {
   const [dialog, setDialog] = useState<DialogState>({ isShow: false, which: null })
 
   // eslint-disable-next-line react/no-multi-comp
-  const renderDialog = (): JSX.Element => {
-    if (!dialog.isShow && dialog.which === null) return <Dialog isShow={false} />
+  const renderDialog = (): JSX.Element | null => {
+    if (!dialog.isShow) return null
     if (dialog.which === 'title') {
       return (
-        <Dialog isShow onClick={() => setDialog({ isShow: false, which: null })} >
+        <Dialog onClick={() => setDialog({ isShow: false, which: null })} >
           <View className={styles.dialog_wrapper}>
             <Image src={iconWithoutTitle} className={styles.dialog_image} />
             <View>你还未输入标题</View>
@@ -27,7 +27,7 @@ const Feedback: Taro.FC = () => {
       )
     }
     return (
-      <Dialog isShow onClick={() => setDialog({ isShow: false, which: null })} >
+      <Dialog onClick={() => setDialog({ isShow: false, which: null })} >
         <View className={styles.dialog_wrapper}>
           <Image src={iconWithoutReason} className={styles.dialog_image} />
           <View>你还未输入内容</View>
@@ -51,8 +51,8 @@ const Feedback: Taro.FC = () => {
 
   return (
     <View className={styles.full_screen}>
-      <NavToBack title='反馈中心' backgroundColor='#F6F5FA' />
       {renderDialog()}
+      <NavToBack title='反馈中心' backgroundColor='#F6F5FA' />
       <View className={styles.container}>
         <View className={styles.title}>故障标题</View>
         <Input

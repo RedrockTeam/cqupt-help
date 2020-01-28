@@ -1,0 +1,63 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  display: flex;
+  padding: 29px;
+  width: 750px;
+  height: 413px;
+  justify-content: space-between;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+.image {
+  width: 242px;
+  height: 353px;
+}
+
+.right {
+  width: 428px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  @include font(30px, #474F66, bold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 428px;
+  height: 29px;
+  line-height: 29px;
+}
+
+.remain {
+  @include font(24px, #FF3B3B, 400);
+}
+
+.text {
+  margin-top: 28px;
+  height: 23px;
+  line-height: 23px;
+  @include font(24px, #999, 400);
+}
+
+.main_text {
+  @include font(24px, #555, 400);
+}
+
+.rob_time {
+  @include font(24px, #36CA94, 400);
+  margin-top: 28px;
+  height: 23px;
+  line-height: 23px;
+}
+
+.button {
+  @include font(32px, #fff, 400);
+  width: 428px;
+  height: 80px;
+  margin-top: 94px;
+  line-height: 80px;
+  border-radius: 0;
+}

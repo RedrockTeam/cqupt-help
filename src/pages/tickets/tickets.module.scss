@@ -1,0 +1,33 @@
+@import '../../assets/styles/mixins.scss';
+
+@include full_screen;
+
+.container {
+  padding: 20px 0;
+}
+
+.dialog {
+  &_wrapper {
+    width: 520px;
+    height: 317px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include font(24px, #666, 500);
+  }
+  &_image {
+    width: 140px;
+    height: 125px;
+    margin-bottom: 10px;
+  }
+  &_title {
+    @include font(30px, #333, 500);
+  }
+  &_content {
+    @include font(24px, #999, 400);
+    width: 341px;
+    text-align: center;
+  }
+}
+
