@@ -1,16 +1,14 @@
 @import '../../assets/styles/mixins.scss';
-
-page {
-  overflow: hidden;
-}
+@import '../../assets/styles/constant.scss';
 
 .container {
   display: flex;
   flex-direction: column;
   width:750px;
-  height: 2000px; // 背景颜色设置
+  min-height: $clientHeight; // 背景颜色设置
   background-color: #F6F5FA;
   padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .wrapper {

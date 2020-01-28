@@ -1,0 +1,21 @@
+@import '../../assets/styles/mixins.scss';
+@import '../../assets/styles/constant.scss';
+
+.container {
+  height: $clientHeight;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 285px;
+  height: 212px;
+}
+
+.content {
+  margin-top: 42px;
+  padding-bottom: 160px;
+  @include font(28px, #999, 400);
+}

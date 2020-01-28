@@ -8,7 +8,7 @@ interface Prop {
   date: string,
 }
 
-const Activity: Taro.FC<Prop> = ({ title, organization, date }) => {
+const RecentActivity: Taro.FC<Prop> = ({ title, organization, date }) => {
   return (
     <View className={styles.container}>
       <View className={styles.header}>
@@ -21,4 +21,4 @@ const Activity: Taro.FC<Prop> = ({ title, organization, date }) => {
   )
 }
 
-export default Activity
+export default RecentActivity
