@@ -2,7 +2,6 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
 import Home from './pages/home/home'
-// import Home from './pages/idCards/idCards'
 
 import store from './redux'
 
@@ -31,6 +30,8 @@ class App extends Component {
           'pages/feedback/feedback',
             'pages/feedbackSucceed/feedbackSucceed',
         'pages/compus/compus',
+          'pages/run/run',
+          'pages/rock/rock',
         'pages/tickets/tickets',
         'pages/volunteer/volunteer',
         'pages/myActivities/myActivities',
@@ -41,7 +42,7 @@ class App extends Component {
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '重邮帮',
       navigationBarTextStyle: 'black',
     }
   }

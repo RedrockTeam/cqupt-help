@@ -1,0 +1,59 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  width: 192px;
+  height: 168px;
+  margin-top: 40px;
+}
+
+.text {
+  @include font(24px, #999, 500);
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.selector {
+  @include font(24px, #333, 500);
+  display: flex;
+  width: 330px;
+  justify-content: space-between;
+}
+
+@mixin icon {
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: 40px 60px;
+  background-position: center top;
+  margin-bottom: 20px;
+}
+
+.food {
+  &_icon {
+    @include icon;
+    background-image: url(../../assets/images/icon-food.png);
+    &_active {
+      @include icon;
+      background-image: url(../../assets/images/icon-food-active.png);
+    }
+  }
+  text-align: center;
+}
+
+.drink {
+  &_icon {
+    @include icon;
+    background-image: url(../../assets/images/icon-drink.png);
+    &_active {
+      @include icon;
+      background-image: url(../../assets/images/icon-drink-active.png);
+    }
+  }
+  text-align: center;
+}

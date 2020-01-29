@@ -1,0 +1,43 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  display: flex;
+  width: 690px;
+  height: 139px;
+  padding: 29px;
+  margin: 16px auto;
+  justify-content: space-between;
+  background-color: #F5F6FA;
+  align-items: center;
+}
+
+.left {
+  padding-left: 38px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  height: 81px;
+  justify-content: space-between;
+}
+
+.title {
+  @include font(30px, #333, bold);
+  height: 29px;
+  line-height: 29px;
+}
+
+.organization {
+  @include font(24px, #999, 400);
+  height: 23px;
+  line-height: 23px;
+}
+
+.arrow {
+  width:17px;
+  height:29px;
+  background-image: url('../../assets/images/back.png');
+  background-size: 17px 29px;
+  transform: rotate(180deg);
+}
