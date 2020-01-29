@@ -42,7 +42,8 @@ const Rock: Taro.FC = () => {
     Taro.onAccelerometerChange(cb)
 
     return () => {
-      Taro.offAccelerometerChange(cb)
+      // 已提 Issue：先用 wx.offAccelerometerChange 调用
+      wx.offAccelerometerChange(cb)
     }
   }, [active, dialog.isShow])
 
@@ -52,7 +53,6 @@ const Rock: Taro.FC = () => {
         {...dialog.shop}
         onClick={() => setDialog(initialDialogState)}
         onRockAgain={() => {
-          console.log('again')
           setDialog({ isShow: true, shop: getRandom(active!) })
         }}
       />}

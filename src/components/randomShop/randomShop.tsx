@@ -18,7 +18,14 @@ const RandomShop: Taro.FC<Prop> = ({ name, location, img, onClick, onRockAgain }
         <View className={styles.dialog_bottom}>
           <View className={styles.dialog_name}>{name}</View>
           <View className={styles.dialog_location}>{location}</View>
-          <View className={styles.dialog_btn} onClick={onRockAgain}>再摇一次</View>
+          <View
+            className={styles.dialog_btn}
+            onClick={(e) => {
+              e.stopPropagation()
+              e.preventDefault()
+              onRockAgain()
+            }}
+          >再摇一次</View>
         </View>
       </View>
     </Dialog>
