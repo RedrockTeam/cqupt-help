@@ -6,43 +6,32 @@ import Dialog from '../../components/dialog/dialog'
 import iconWithoutTitle from '../../assets/images/icon-without-title.png'
 import iconWithoutReason from '../../assets/images/icon-without-reason.png'
 
-type DialogState = { isShow: boolean, which: 'title' | 'reason' | null }
-
 const Feedback: Taro.FC = () => {
   const [title, setTitle] = useState<string>('')
   const [reason, setReason] = useState<string>('')
-  const [dialog, setDialog] = useState<DialogState>({ isShow: false, which: null })
+  const [dialog, setDialog] = useState<boolean>(false)
 
   // eslint-disable-next-line react/no-multi-comp
   const renderDialog = (): JSX.Element | null => {
-    if (!dialog.isShow) return null
-    if (dialog.which === 'title') {
+    if (dialog) {
       return (
-        <Dialog onClick={() => setDialog({ isShow: false, which: null })} >
+        <Dialog onClick={() => setDialog(false)} >
           <View className={styles.dialog_wrapper}>
-            <Image src={iconWithoutTitle} className={styles.dialog_image} />
-            <View>你还未输入标题</View>
+            <Image
+              src={title.length === 0 ? iconWithoutTitle : iconWithoutReason}
+              className={styles.dialog_image}
+            />
+            <View>你还未输入{title.length === 0 ? '标题' : '内容'}</View>
           </View>
         </Dialog>
       )
     }
-    return (
-      <Dialog onClick={() => setDialog({ isShow: false, which: null })} >
-        <View className={styles.dialog_wrapper}>
-          <Image src={iconWithoutReason} className={styles.dialog_image} />
-          <View>你还未输入内容</View>
-        </View>
-      </Dialog>
-    )
+    return null
   }
 
   const onClick = () => {
-    if (title.length === 0) {
-      setDialog({ isShow: true, which: 'title' })
-      return
-    }
-    if (reason.length === 0) {
-      setDialog({ isShow: true, which: 'reason' })
+    if (title.length === 0 || reason.length === 0) {
+      setDialog(true)
       return
     }
     console.log(title, reason)
