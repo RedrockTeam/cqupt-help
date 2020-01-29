@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "cqupt-help",
 	"description": "cqupt-help",
-	"appid": "touristappid",
+	"appid": "wx627582b5aaab4c9f",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

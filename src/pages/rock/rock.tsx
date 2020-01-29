@@ -1,7 +1,8 @@
-import Taro, { useState, useDidShow } from '@tarojs/taro'
+import Taro, { useState, useEffect } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import styles from './rock.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
+import RandomShopDialog from '../../components/randomShop/randomShop'
 import rockImg from '../../assets/images/rock-img.png'
 import config, { Shop } from '../../config/index'
 
@@ -13,23 +14,48 @@ function getRandom(type: 'food' | 'drink'): Shop {
   return list![Math.round(Math.random() * list!.length)]
 }
 
+const initialDialogState = {
+  isShow: false,
+  shop: {
+    name: '',
+    location: '',
+    img: '',
+  },
+}
+
 const Rock: Taro.FC = () => {
   const [active, setActive] = useState<'food' | 'drink' | null>(null)
+  const [dialog, setDialog] = useState<{
+    isShow: boolean,
+    shop: Shop
+  }>(initialDialogState)
 
-  useDidShow(() => {
-    Taro.onAccelerometerChange(res => {
-      console.log(res.x)
-      console.log(res.y)
-      console.log(res.z)
+  useEffect(() => {
+    const cb: Taro.onAccelerometerChange.Callback = (res) => {
+      if (dialog.isShow) return
       if (active === null) return
-      if (res.x > 1 && res.y > 1) {
-        const item: Shop = getRandom(active)
+      if (Math.abs(res.x) > .7) {
+        setDialog({ isShow: true, shop: getRandom(active!) })
       }
-    })
-  })
+    }
+
+    Taro.onAccelerometerChange(cb)
+
+    return () => {
+      Taro.offAccelerometerChange(cb)
+    }
+  }, [active, dialog.isShow])
 
   return (
     <View>
+      {dialog.isShow && <RandomShopDialog
+        {...dialog.shop}
+        onClick={() => setDialog(initialDialogState)}
+        onRockAgain={() => {
+          console.log('again')
+          setDialog({ isShow: true, shop: getRandom(active!) })
+        }}
+      />}
       <NavToBack title='摇一摇' />
       <View className={styles.container}>
         <Image className={styles.img} src={rockImg} />

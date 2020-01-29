@@ -1,0 +1,38 @@
+@import '../../assets/styles/mixins.scss';
+
+.dialog {
+  &_wrapper {
+    width: 520px;
+    height: 603px;
+  }
+  &_img {
+    width: 520px;
+    height: 307px;
+  }
+  &_bottom {
+    width: 520px;
+    height: 296px;
+    padding: 40px;
+  }
+  &_name {
+    @include font(30px, #333, 500);
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  &_location {
+    @include font(26px, #666, 400);
+    height: 24px;
+    line-height: 24px;
+  }
+  &_btn {
+    margin-top: 64px;
+    width: 441px;
+    height: 80px;
+    background-color: #4059FF;
+    color: #fff;
+    @include font(36px, #fff, bold);
+    line-height: 80px;
+    text-align: center;
+  }
+}

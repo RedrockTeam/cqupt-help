@@ -43,16 +43,16 @@ const mock = [
   },
 ]
 
-type DialogState = { isShow: boolean, which: 'succeed' | 'fail' | null }
+type DialogState = { isShow: boolean, robState: 'succeed' | 'fail' | null }
 
 const Tickets: Taro.FC = () => {
-  const [dialog, setDialog] = useState<DialogState>({ isShow: false, which: null })
+  const [dialog, setDialog] = useState<DialogState>({ isShow: false, robState: null })
 
   // eslint-disable-next-line react/no-multi-comp
   const renderDialog = (): JSX.Element | null => {
     if (!dialog.isShow) return null
-    if (dialog.which === 'succeed') return (
-      <Dialog onClick={() => setDialog({ isShow: false, which: null })}>
+    if (dialog.robState === 'succeed') return (
+      <Dialog onClick={() => setDialog({ isShow: false, robState: null })}>
         <View className={styles.dialog_wrapper}>
           <Image src={IconRobSucceed} className={styles.dialog_image} />
           <View className={styles.dialog_title}>恭喜您！抢票成功！</View>
@@ -61,7 +61,7 @@ const Tickets: Taro.FC = () => {
       </Dialog>
     )
     return (
-      <Dialog onClick={() => setDialog({ isShow: false, which: null })}>
+      <Dialog onClick={() => setDialog({ isShow: false, robState: null })}>
         <View className={styles.dialog_wrapper}>
           <Image src={IconRobSucceed} className={styles.dialog_image} />
           <View className={styles.dialog_title}>恭喜您！抢票失败！</View>
@@ -77,7 +77,7 @@ const Tickets: Taro.FC = () => {
       <NavToBack title='线上抢票' backgroundColor='#F4F6FA' />
       <View className={styles.container}>
         {mock.map(e => (
-          <Ticket {...e} key={e.title} onRob={() => setDialog({ isShow: true, which: 'succeed' })} />
+          <Ticket {...e} key={e.title} onRob={() => setDialog({ isShow: true, robState: 'succeed' })} />
         ))}
       </View>
     </View>
