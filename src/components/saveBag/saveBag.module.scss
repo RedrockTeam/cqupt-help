@@ -1,0 +1,59 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  background-color: #F4F6F9;
+}
+
+.top {
+  height: 40vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 30px 60px;
+}
+
+.history {
+  width: 690px;
+  text-align: end;
+}
+
+.qrcode {
+  width: 177px;
+  height: 177px;
+  background-size: 177px 177px;
+  background-image: url(../../assets/images/icon-qrcode.png);
+}
+
+.btn {
+  width: 300px;
+  height: 81px;
+  line-height: 81px;
+  @include font(36px, #fff, bold);
+  background-color: #3F59FF;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.tip {
+  @include font(24px, #999, 500);
+  height: 24px;
+  line-height: 24px;
+}
+
+.text {
+  width: 624px;
+  margin: 40px auto;
+}
+
+.title {
+  @include font(30px, #333, 500);
+  text-align: center;
+}
+
+.rules {
+  @include font(26px, #666, 400);
+  margin: 29px 0;
+  line-height: 40px;
+}

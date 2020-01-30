@@ -1,0 +1,41 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  padding: 40px 30px;
+}
+
+.text {
+  @include font(30px, #666, bold);
+}
+
+.main {
+  @include font(72px, #333, bold);
+  width: 690px;
+  text-align: center;
+  margin: 20px 0 50px;
+}
+
+.btn {
+  width: 690px;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 96px;
+  left: 0;
+  right: 0;
+  @include font(36px, #fff, bold);
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  background-color: #4059FF;
+}
+
+.tip {
+  width: 690px;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 205px;
+  left: 0;
+  right: 0;
+  text-align: end;
+  @include font(24px, #FF3B3B, 500);
+}

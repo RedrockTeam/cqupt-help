@@ -1,21 +1,21 @@
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-// import styles from './run.module.scss'
+import styles from './run.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
-
-import Developing from '../../components/developing/developing'
+import SaveBag from '../../components/saveBag/saveBag'
+import TakeBag from '../../components/takeBag/takeBag'
 
 const Run: Taro.FC = () => {
   return (
-    <View>
-      <NavToBack title='志愿服务' />
-      <Developing />
+    <View className={styles.full_screen}>
+      <NavToBack title='天天护跑' />
+      <TakeBag code='A50' location='风华操场' />
     </View>
   )
 }
 
 Run.config = {
-  navigationBarTitleText: '志愿服务',
+  navigationBarTitleText: '天天护跑',
   navigationStyle: 'custom',
 }
 
