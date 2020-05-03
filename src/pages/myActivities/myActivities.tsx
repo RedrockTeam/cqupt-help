@@ -64,8 +64,8 @@ const MyActivities: Taro.FC = () => {
         ? <Empty content='您还未获得任何奖品！赶快去参加活动吧!' />
         : (
           <View className={styles.container}>
-            {mock.map((e, i) => (
-              <MyActivity {...e} isFirst={i === 0} key={e.title} />
+            {mock.map((e) => (
+              <MyActivity {...e} key={e.title} />
             ))}
           </View>
         )

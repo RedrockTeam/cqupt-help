@@ -1,9 +1,19 @@
 @import '../../assets/styles/mixins.scss';
 
+.line_wrapper {
+  height: 240px;
+  background-image: url(../../assets/images/my-activity-left.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  background-size: 18px 240px;
+  background-clip: border-box;
+}
+
 .container {
   width: 656px;
+  height: 210px;
   margin-left: 34px;
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .header {

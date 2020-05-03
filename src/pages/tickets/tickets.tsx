@@ -1,5 +1,5 @@
 import Taro, { useState } from '@tarojs/taro'
-import { View, Image } from '@tarojs/components'
+import { View, Image, WebView } from '@tarojs/components'
 import styles from './tickets.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import Ticket from '../../components/ticket/ticket'
@@ -72,15 +72,16 @@ const Tickets: Taro.FC = () => {
   }
 
   return (
-    <View className={styles.full_screen}>
-      {renderDialog()}
-      <NavToBack title='线上抢票' backgroundColor='#F4F6FA' />
-      <View className={styles.container}>
-        {mock.map(e => (
-          <Ticket {...e} key={e.title} onRob={() => setDialog({ isShow: true, robState: 'succeed' })} />
-        ))}
-      </View>
-    </View>
+    // <View className={styles.full_screen}>
+    //   {renderDialog()}
+    //   <NavToBack title='线上抢票' backgroundColor='#F4F6FA' />
+    //   <View className={styles.container}>
+    //     {mock.map(e => (
+    //       <Ticket {...e} key={e.title} onRob={() => setDialog({ isShow: true, robState: 'succeed' })} />
+    //     ))}
+    //   </View>
+    // </View>
+    <WebView src='https://blog.ahabhgk.top/'></WebView>
   )
 }
 
