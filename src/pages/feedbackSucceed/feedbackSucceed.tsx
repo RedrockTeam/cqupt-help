@@ -3,14 +3,14 @@ import { View, Button, Image, Text } from '@tarojs/components'
 import styles from './feedbackSucceed.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import icon from '../../assets/images/icon-feedback-succeed.png'
-import config from '../../config/index'
+import { qqGroup } from '../../config/index'
 
 const goBack = () => Taro.navigateBack({ delta: 2 })
 
 const FeedbackSucceed: Taro.FC = () => {
   const copy = async () => {
     try {
-      await Taro.setClipboardData({ data: config.qqGroup })
+      await Taro.setClipboardData({ data: qqGroup })
       await Taro.showToast({
         title: '已添加到剪贴板中！',
         duration: 2000,
@@ -33,7 +33,7 @@ const FeedbackSucceed: Taro.FC = () => {
         <Image src={icon} className={styles.icon} />
         <Text className={styles.title}>反馈成功</Text>
         <View className={styles.info}>
-          了解更多反馈情况可加 QQ 群：{config.qqGroup} <View className={styles.copy} onClick={copy}>复制</View>
+          了解更多反馈情况可加 QQ 群：{qqGroup} <View className={styles.copy} onClick={copy}>复制</View>
         </View>
         <Button className={styles.confirm} onClick={goBack}>确定</Button>
       </View>

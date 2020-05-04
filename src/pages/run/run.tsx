@@ -9,7 +9,8 @@ const Run: Taro.FC = () => {
   return (
     <View className={styles.full_screen}>
       <NavToBack title='天天护跑' />
-      <TakeBag code='A50' location='风华操场' />
+      {/* <TakeBag code='A50' location='风华操场' /> */}
+      <SaveBag />
     </View>
   )
 }

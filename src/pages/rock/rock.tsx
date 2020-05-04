@@ -4,12 +4,12 @@ import styles from './rock.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import RandomShopDialog from '../../components/randomShop/randomShop'
 import rockImg from '../../assets/images/rock-img.png'
-import config, { Shop } from '../../config/index'
+import { Shop, drinkShopList, foodShopList } from '../../config/index'
 
 function getRandom(type: 'food' | 'drink'): Shop {
   let list: Shop[]
-  if (type === 'food') list = config.foodShopList
-  if (type === 'drink') list = config.drinkShopList
+  if (type === 'food') list = foodShopList
+  if (type === 'drink') list = drinkShopList
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return list![Math.round(Math.random() * list!.length)]
 }
@@ -35,15 +35,14 @@ const Rock: Taro.FC = () => {
       if (dialog.isShow) return
       if (active === null) return
       if (Math.abs(res.x) > .7) {
-        setDialog({ isShow: true, shop: getRandom(active!) })
+        setDialog({ isShow: true, shop: getRandom(active) })
       }
     }
 
     Taro.onAccelerometerChange(cb)
 
     return () => {
-      // 已提 Issue：先用 wx.offAccelerometerChange 调用
-      wx.offAccelerometerChange(cb)
+      Taro.offAccelerometerChange(cb)
     }
   }, [active, dialog.isShow])
 
@@ -53,7 +52,11 @@ const Rock: Taro.FC = () => {
         {...dialog.shop}
         onClick={() => setDialog(initialDialogState)}
         onRockAgain={() => {
-          setDialog({ isShow: true, shop: getRandom(active!) })
+          if (!active) {
+            Taro.showToast({ title: '请选择奶茶还是食物', duration: 2000 })
+            return
+          }
+          setDialog({ isShow: true, shop: getRandom(active) })
         }}
       />}
       <NavToBack title='摇一摇' />
