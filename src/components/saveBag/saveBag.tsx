@@ -1,31 +1,19 @@
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import { EventProps } from '@tarojs/components/types/common'
 import styles from './saveBag.module.scss'
-import { PLATE_A, PLATE_B, PLATE_C } from '../../config'
 
-const SaveBag: Taro.FC = () => {
-  const handleScan = async () => {
-    const res = await Taro.scanCode({ onlyFromCamera: true })
-    switch (res.result) {
-      case PLATE_A:
-        // TODO
-        break;
-      case PLATE_B:
-        
-        break;
-      case PLATE_C:
-        
-        break;
-      default:
-        break;
-    }
-  }
+type Props = {
+  onSaveBag: EventProps['onClick']
+}
+
+const SaveBag: Taro.FC<Props> = ({ onSaveBag }) => {
   return (
     <View className={styles.container}>
       <View className={styles.top}>
         <View className={styles.history}>历史记录</View>
         <View className={styles.qrcode}></View>
-        <View className={styles.btn} onClick={handleScan}>扫一扫</View>
+        <View className={styles.btn} onClick={onSaveBag}>扫一扫</View>
         <View className={styles.tip}>扫一扫，快速取号存包</View>
       </View>
       <View className={styles.text}>

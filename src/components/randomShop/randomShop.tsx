@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 import { ITouchEvent } from '@tarojs/components/types/common'
 import styles from './randomShop.module.scss'
-import { Shop } from '../../config/index'
+import { Shop } from '../../constants/index'
 import Dialog from '../dialog/dialog'
 
 interface Prop extends Shop {

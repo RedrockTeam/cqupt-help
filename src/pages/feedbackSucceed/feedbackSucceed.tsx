@@ -3,7 +3,7 @@ import { View, Button, Image, Text } from '@tarojs/components'
 import styles from './feedbackSucceed.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import icon from '../../assets/images/icon-feedback-succeed.png'
-import { qqGroup } from '../../config/index'
+import { qqGroup } from '../../constants/index'
 
 const goBack = () => Taro.navigateBack({ delta: 2 })
 

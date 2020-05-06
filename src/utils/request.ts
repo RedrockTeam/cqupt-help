@@ -1,20 +1,24 @@
 import Taro from '@tarojs/taro'
 
-export default async function fetch(options) {
-  const { url, payload, method = 'GET', showToast = true, autoLogin = true } = options
+type RequestOption<T> = Taro.request.Option<T> & {
+  showToast?: boolean,
+  autoLogin?: boolean,
+}
+
+export default async function request<T = any, U = any>(option: RequestOption<U>) {
+  const { url, data, method = 'GET', showToast = true, autoLogin = true } = option
   // const token = await getStorage('token')
   const header = {}
   if (method === 'POST') {
     header['content-type'] = 'application/json'
   }
 
-  return Taro.request({
+  return Taro.request<T, U>({
     url,
     method,
-    data: payload,
+    data,
     header
   }).then(async (res) => {
-    const { code, data } = res.data
     // if (code !== CODE_SUCCESS) {
     //   if (code === CODE_AUTH_EXPIRED) {
     //     await updateStorage({})
@@ -32,7 +36,7 @@ export default async function fetch(options) {
     //   return { ...data, uid }
     // }
 
-    return data
+    return res.data
   }).catch((err) => {
     // const defaultMsg = err.code === CODE_AUTH_EXPIRED ? '登录失效' : '请求异常'
     // if (showToast) {
@@ -47,6 +51,11 @@ export default async function fetch(options) {
     //     url: '/pages/user-login/user-login'
     //   })
     // }
+    if (showToast) {
+      Taro.showToast({
+        title: err.errorMsg,
+      })
+    }
 
     // return Promise.reject({ message: defaultMsg, ...err })
   })

@@ -4,7 +4,7 @@ import styles from './rock.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import RandomShopDialog from '../../components/randomShop/randomShop'
 import rockImg from '../../assets/images/rock-img.png'
-import { Shop, drinkShopList, foodShopList } from '../../config/index'
+import { Shop, drinkShopList, foodShopList } from '../../constants/index'
 
 function getRandom(type: 'food' | 'drink'): Shop {
   let list: Shop[]
