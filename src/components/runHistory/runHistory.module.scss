@@ -1,0 +1,29 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+  height: 223px;
+  padding: 29px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.title {
+  @include font(30px, #333, bold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.state {
+  @include font(28px, #999, 400);
+  &_active {
+    @include font(28px, #36CA94, 400);
+  }
+}
+
+.text {
+  @include font(24px, #666, 400);
+}

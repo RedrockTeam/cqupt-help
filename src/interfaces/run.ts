@@ -17,5 +17,5 @@ export interface Record {
 
 export interface GetRecordsResponse {
   flag: 0 | 1,
-  records: Record[],
+  records: Record[] | null,
 }

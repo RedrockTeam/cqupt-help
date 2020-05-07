@@ -7,6 +7,9 @@ import Dialog from '../../components/dialog/dialog'
 import IconRobSucceed from '../../assets/images/icon-rob-succeed.png'
 
 import defaultImg from '../../assets/images/movie.png'
+import request, { useRequest } from '../../utils/request'
+import { GetTicketsResponse, RobTicketResponse } from '../../interfaces/tickets'
+import { API_TICKETS_GET_TICKETS, API_TICKETS_ROB_TICKET } from '../../constants/api'
 
 const mock = [
   {
@@ -43,16 +46,20 @@ const mock = [
   },
 ]
 
-type DialogState = { isShow: boolean, robState: 'succeed' | 'fail' | null }
+type DialogState = { isShow: boolean, robState: 'succeed' | 'fail' | null, info: string }
 
 const Tickets: Taro.FC = () => {
-  const [dialog, setDialog] = useState<DialogState>({ isShow: false, robState: null })
+  const [dialog, setDialog] = useState<DialogState>({ isShow: false, robState: null, info: '' })
+  const { response, loading } = useRequest<GetTicketsResponse>({
+    url: API_TICKETS_GET_TICKETS,
+    method: 'POST',
+  })
 
   // eslint-disable-next-line react/no-multi-comp
-  const renderDialog = (): JSX.Element | null => {
+  const renderDialog = () => {
     if (!dialog.isShow) return null
     if (dialog.robState === 'succeed') return (
-      <Dialog onClick={() => setDialog({ isShow: false, robState: null })}>
+      <Dialog onClick={() => setDialog({ isShow: false, robState: null, info: '' })}>
         <View className={styles.dialog_wrapper}>
           <Image src={IconRobSucceed} className={styles.dialog_image} />
           <View className={styles.dialog_title}>恭喜您！抢票成功！</View>
@@ -61,27 +68,64 @@ const Tickets: Taro.FC = () => {
       </Dialog>
     )
     return (
-      <Dialog onClick={() => setDialog({ isShow: false, robState: null })}>
+      <Dialog onClick={() => setDialog({ isShow: false, robState: null, info: '' })}>
         <View className={styles.dialog_wrapper}>
           <Image src={IconRobSucceed} className={styles.dialog_image} />
-          <View className={styles.dialog_title}>恭喜您！抢票失败！</View>
-          <View className={styles.dialog_content}>电影票卡卷已存入“我的奖品”中。赶紧去领电影票吧！</View>
+          <View className={styles.dialog_title}>Ops...</View>
+          <View className={styles.dialog_content}>{dialog.info}</View>
         </View>
       </Dialog>
     )
   }
 
+  const renderContent = () => {
+    if (loading) return <View>Loading...</View>
+    if (!response) return null
+    if (response.status === 200) {
+      if (response.data === null || response.data.length === 0) return null
+      return (
+        <View className={styles.container}>
+          {response.data.map(e => (
+            <Ticket
+              title={e.name}
+              img='todo'
+              place='todo'
+              date='todo'
+              robTime={e.begin_time}
+              remain={e.left}
+              key={e.id}
+              onRob={() => {
+                request<RobTicketResponse>({
+                  url: API_TICKETS_ROB_TICKET,
+                  method: 'POST',
+                  data: {
+                    'product_id': e.id,
+                  },
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                  },
+                }).then(res => {
+                  if (res.status === 10000) {
+                    setDialog({ isShow: true, robState: 'succeed', info: res.info })
+                  } else {
+                    setDialog({ isShow: true, robState: 'fail', info: res.info })
+                  }
+                })
+              }}
+            />
+          ))}
+        </View>
+      )
+    }
+  }
+
   return (
-    // <View className={styles.full_screen}>
-    //   {renderDialog()}
-    //   <NavToBack title='线上抢票' backgroundColor='#F4F6FA' />
-    //   <View className={styles.container}>
-    //     {mock.map(e => (
-    //       <Ticket {...e} key={e.title} onRob={() => setDialog({ isShow: true, robState: 'succeed' })} />
-    //     ))}
-    //   </View>
-    // </View>
-    <WebView src='https://blog.ahabhgk.top/'></WebView>
+    <View className={styles.full_screen}>
+      {renderDialog()}
+      <NavToBack title='线上抢票' backgroundColor='#F4F6FA' />
+      {renderContent()}
+    </View>
+    // <WebView src='https://blog.ahabhgk.top/'></WebView>
   )
 }
 

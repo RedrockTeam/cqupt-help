@@ -31,6 +31,7 @@ class App extends Component {
             'pages/feedbackSucceed/feedbackSucceed',
         'pages/compus/compus',
           'pages/run/run',
+            'pages/run/history',
           'pages/rock/rock',
         'pages/tickets/tickets',
         'pages/volunteer/volunteer',

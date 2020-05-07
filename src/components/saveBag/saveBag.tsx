@@ -11,7 +11,10 @@ const SaveBag: Taro.FC<Props> = ({ onSaveBag }) => {
   return (
     <View className={styles.container}>
       <View className={styles.top}>
-        <View className={styles.history}>历史记录</View>
+        <View
+          className={styles.history}
+          onClick={() => Taro.navigateTo({ url: '/pages/run/history' })}
+        >历史记录</View>
         <View className={styles.qrcode}></View>
         <View className={styles.btn} onClick={onSaveBag}>扫一扫</View>
         <View className={styles.tip}>扫一扫，快速取号存包</View>

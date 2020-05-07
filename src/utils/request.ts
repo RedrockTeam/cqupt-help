@@ -1,4 +1,4 @@
-import Taro from '@tarojs/taro'
+import Taro, { useState, useEffect } from '@tarojs/taro'
 
 type RequestOption<T> = Taro.request.Option<T> & {
   showToast?: boolean,
@@ -57,6 +57,19 @@ export default async function request<T = any, U = any>(option: RequestOption<U>
       })
     }
 
-    // return Promise.reject({ message: defaultMsg, ...err })
+    return Promise.reject(err)
   })
+}
+
+export const useRequest = <T = any, U = any>(option: RequestOption<U>) => {
+  const [response, setResponse] = useState<T>()
+  const [loading, setLoading] = useState<boolean>(true)
+  useEffect(() => {
+    request(option)
+      .then(res => {
+        setResponse(res)
+        setLoading(false)
+      })
+  }, [])
+  return { response, setResponse, loading, setLoading }
 }
