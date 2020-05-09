@@ -93,18 +93,18 @@ const RunHistories: Taro.FC = () => {
     })
   })
 
+  // eslint-disable-next-line react/no-multi-comp
   const renderContent = () => {
     if (loading) return <View>Loading...</View>
     if (!response) return null // request 获取失败，会有 showToast 提示
     if (response.records === null || response.records.length === 0) {
       return <Empty content='还没有存取过包!' />
-    } else {
-      return (
-        <View className={styles.container}>
-          {response.records.map((e) => <RunHistory {...e} key={e.ID} />)}
-        </View>
-      )
     }
+    return (
+      <View className={styles.container}>
+        {response.records.map((e) => <RunHistory {...e} key={e.ID} />)}
+      </View>
+    )
   }
   return (
     <View className={styles.full_screen}>

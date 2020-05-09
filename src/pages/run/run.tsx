@@ -15,6 +15,7 @@ import {
   API_RUN_RETURN_PLATE_C,
 } from '../../constants/api'
 import { GetPlateResponse, ReturnPlateResponse } from '../../interfaces/run'
+import Loading from '../../components/loading/loading'
 
 const Run: Taro.FC = () => {
   const [plateCode, setPlateCode] = useState<string>('')
@@ -75,6 +76,7 @@ const Run: Taro.FC = () => {
   return (
     <View className={styles.full_screen}>
       <NavToBack title='天天护跑' />
+      <Loading />
       {hasSave
         ? <TakeBag plateCode={plateCode} onTakeBag={handleTakeBag} />
         : <SaveBag onSaveBag={handleScan} />}

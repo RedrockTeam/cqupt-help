@@ -1,0 +1,16 @@
+.wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.loading {
+  width: inherit;
+  height: inherit;
+  animation: whirl 2s linear infinite;
+}
+
+@keyframes whirl {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}

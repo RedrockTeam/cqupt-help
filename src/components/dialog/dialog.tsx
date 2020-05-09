@@ -13,7 +13,7 @@ const Dialog: Taro.FC<Prop> = ({ onClick, children }) => {
       className={styles.container}
       onClick={onClick}
     >
-      <View className={styles.box}>
+      <View className={styles.box} onClick={(e) => e.stopPropagation()}>
         {children}
       </View>
     </View>

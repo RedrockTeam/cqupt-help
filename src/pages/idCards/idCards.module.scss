@@ -1,3 +1,40 @@
+@import '../../assets/styles/mixins.scss';
+
 .container {
   overflow-x: hidden;
 }
+
+.apply {
+  @include littleBlueButton;
+  margin-bottom: 78px;
+}
+
+.submit {
+  @include littleBlueButton;
+  width: 441px;
+}
+
+.dialog {
+  &_wrapper {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include font(24px, #666, 500);
+  }
+  &_title {
+    @include font(32px, #333, bold);
+    margin-bottom: 90px;
+  }
+  &_input {
+    @include font(28px, #666, 500);
+    line-height: 50px;
+    border-bottom: 2px solid #F4F6F9;
+    margin-bottom: 20px;
+  }
+  &_warn {
+    color: #FF3B3B;
+    margin-bottom: 100px;
+  }
+}
+
