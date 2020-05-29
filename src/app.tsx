@@ -14,6 +14,27 @@ import './app.scss'
 // }
 
 class App extends Component {
+  componentDidMount() {
+    Taro.login({
+      async success(loginRes) {
+        if (loginRes.code) {
+          const res = await Taro.request({
+            url: `https://wx.redrock.team/magicloop/rushAb?code=${loginRes.code}&b=/`,
+            method: 'POST',
+            // header: {
+            //   'content-type': 'application/x-www-form-urlencoded',
+            // },
+            // data: {
+            //   stuNum: '2018214139',
+            //   idNum: '21331X',
+            // },
+            // token: "eyJjbGFzcyI6IjEzMDAxODA3IiwiY29sbGVnZSI6Iui9r+S7tuW3peeoi+WtpumZoiIsImV4cCI6IjEwMjQ1NDU5Nzk4IiwiaWF0IjoiMTU5MDc0MjkxOCIsIm1ham9yIjoiIiwicmVhbE5hbWUiOiLkvZXluprlnaQiLCJzdHVOdW0iOiIyMDE4MjE0MTM5Iiwic3ViIjoieGJzIn0=.F3QclBdLTKP2iINApV5CghTNB5ZwiUyUkzrXh/Wz7+OzCG6QJtDudGQqgqHkMJsPbF5iEGUpSY9hDNH8GC7SV3OSoeP1e+/efWeO1qFs3XlVaKYZ66RiT79R3jLVglASRxBSFqYeoC/Sx8n+SPQAS/B8sY5vSffe9XwZcauZwF2kRdMfIjsgromV89JwDhVvvk6aQGRejc3EYt+gTUOIDH8Ad49gMQBtyqFBAJIsg23vss8rpPIsyQreWRnpGGgS46NhAK4DJ+LlKdII+fJS0f3GaSIXKRPFZ/nfH19UrZ/v2sF1V9zukb6dNqfEHaRRUDWgwRGTdB2fs4XuY4e6jw=="
+          })
+          console.log(res)
+        }
+      }
+    })
+  }
 
   /**
    * 指定config的类型声明为: Taro.Config

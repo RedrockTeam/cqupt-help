@@ -52,6 +52,7 @@ const mockRecentData = [
 ]
 
 const Home: Taro.FC = () => {
+  
   return (
     <View>
       <NavBar

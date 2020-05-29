@@ -4,7 +4,7 @@ import styles from './loading.module.scss'
 import icon from '../../assets/images/loading.png'
 
 type Props = {
-  className: string,
+  className?: string,
 }
 
 const Loading: Taro.FC<Props> = ({ className }) => {

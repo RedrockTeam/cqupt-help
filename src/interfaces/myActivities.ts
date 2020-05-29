@@ -1,4 +1,4 @@
-export interface Activity {
+export interface Reword {
   activity_name: string,
   name: string,
   level: number,
@@ -7,7 +7,7 @@ export interface Activity {
   time_end: number,
 }
 
-export interface GetMyActivitiesResponse {
+export interface GetMyRewordsResponse {
   flag: 0 | 1,
-  data: Activity[],
+  data: Reword[],
 }
