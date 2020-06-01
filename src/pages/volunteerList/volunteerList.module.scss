@@ -1,0 +1,24 @@
+@import "../../assets/styles/mixins.scss";
+
+@include full_screen;
+
+.container {
+  padding: 20px 30px;
+  background-color: #fff;
+  margin: 40px 0;
+}
+
+.title {
+  @include font(30px, #333, bold);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.state {
+  @include font(28px, #FF3B3B, 400);
+}
+
+.text {
+  @include font(24px, #666, 400);
+}

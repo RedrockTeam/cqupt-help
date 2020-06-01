@@ -22,3 +22,10 @@ export const API_TICKETS_ROB_TICKET = `${api}/secKill`
 // self
 export const API_USER_LOGIN = apiLogin
 export const API_SELF_INFO = `${api}/user/info`
+
+// volunteer
+export const API_VOLUNTEER_HAS_BIND = `${api}/volunteer/is`
+export const API_VOLUNTEER_BIND = `${api}/volunteer/login`
+export const API_VOLUNTEER_LIST = `${api}/volunteer/activities`
+export const API_VOLUNTEER_INFO = `${api}/volunteer/activitiey/info`
+export const API_VOLUNTEER_APPLY = `${api}/volunteer/activitiey/apply`

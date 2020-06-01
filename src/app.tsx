@@ -44,6 +44,8 @@ class App extends Component {
           'pages/rock/rock',
         'pages/tickets/tickets',
         'pages/volunteer/volunteer',
+          'pages/volunteerList/volunteerList',
+            'pages/volunteerInfo/volunteerInfo',
         'pages/myActivities/myActivities',
         'pages/myRewards/myRewards',
 
