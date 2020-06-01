@@ -1,6 +1,13 @@
 export interface SelfInfo {
-  id: number,
-  name: string,
-  stuNum: string,
-  collage: string,
+  real_name: string,
+  stu_num: string,
+  college: string,
+  major: string,
+  class: string,
+}
+
+export interface GetUserInfoResponse {
+  status: number,
+  info: string,
+  data: SelfInfo,
 }

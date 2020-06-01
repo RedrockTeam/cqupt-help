@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
 // @ts-nocheck
-// eslint-disable-next-line no-undef
 export const api = API
+// @ts-nocheck
+export const apiLogin = API_LOGIN
 
 // run
 export const API_RUN_GET_PLATE_A = `${api}/guardian/getPlateA`
@@ -16,3 +18,7 @@ export const API_RUN_GET_RECORDS = `${api}/guardian/getRecords`
 // tickets
 export const API_TICKETS_GET_TICKETS = `${api}/secKillInfo`
 export const API_TICKETS_ROB_TICKET = `${api}/secKill`
+
+// self
+export const API_USER_LOGIN = apiLogin
+export const API_SELF_INFO = `${api}/user/info`

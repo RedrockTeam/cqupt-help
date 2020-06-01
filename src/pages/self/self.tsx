@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-import { View, Text, Image } from '@tarojs/components'
+import { View, Text, OpenData } from '@tarojs/components'
 import styles from './self.module.scss'
 import NavToBack from '../../components/navToBack/navToBack'
 import SelfRoute from '../../components/selfRoute/selfRoute'
@@ -31,7 +31,11 @@ const Self: Taro.FC = () => {
           <Text className={styles.self_info__left__info}>学号：2018233333</Text>
           <Text className={styles.self_info__left__info}>专业：软件工程</Text>
         </View>
-        <Image className={styles.self_info__avatar} src={defaultAvatar}></Image>
+        <OpenData
+          className={styles.self_info__avatar}
+          type='userAvatarUrl'
+          defaultAvatar={defaultAvatar}
+        ></OpenData>
       </View>
 
       {/* 下面入口 */}

@@ -4,6 +4,7 @@ module.exports = {
   },
   defineConstants: {
     API: '',
+    API_LOGIN: 'https://wx.redrock.team/magicloop/rushAb',
   },
   mini: {},
   h5: {
