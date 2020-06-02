@@ -24,7 +24,7 @@ const VolunteerList: Taro.FC = () => {
     <View className={styles.full_screen}>
       <NavToBack title='志愿活动' backgroundColor='#F4F6FA' />
         {mock.map(e => (
-          <View className={styles.container} key={e.id} onClick={() => Taro.navigateTo({ url: '/pages/volunteerInfo/volunteerInfo' })}>
+          <View className={styles.container} key={e.id} onClick={() => Taro.navigateTo({ url: `/pages/volunteerInfo/volunteerInfo?id=${e.id}` })}>
             <View className={styles.title} >
               {e.name}
               <Text className={styles.state}>
